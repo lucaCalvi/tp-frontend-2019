@@ -23,20 +23,20 @@ export class DetalleTareaComponent implements OnInit {
   }
 
   getTarea() {
-    const id = this.route.snapshot.paramMap.get('id');
+    const nombreUsuario = this.route.snapshot.paramMap.get('nombreUsuario');
     const idTarea = this.route.snapshot.paramMap.get('idTarea');
-    this.usuarioService.getTarea(id, idTarea)
+    this.usuarioService.getTarea(nombreUsuario, idTarea)
       .subscribe(res => {
         this.tarea = res;
-        this.getAsignador(id);
+        this.getAsignador(nombreUsuario);
       },
       err => {
         console.log('Error ', err);
       });
   }
 
-  getAsignador(id) {
-    this.usuarioService.getUsuario(id)
+  getAsignador(nombreUsuario) {
+    this.usuarioService.getUsuario(nombreUsuario)
       .subscribe(res => {
         this.asignador = res;
       },

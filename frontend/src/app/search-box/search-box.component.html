@@ -3,7 +3,7 @@
     <i class="material-icons">search</i><input #searchBox id="search-box" type="text" (input)="search(searchBox.value)">
     <ul>
         <li class="search-result" *ngFor="let usuario of usuarios$ | async" >
-            <a #searchLink routerLink="/detalle/{{usuario.nombreUsuario}}">
+            <a #searchLink routerLink="/api/usuarios/{{usuario.nombreUsuario}}">
                 {{usuario.nombreUsuario}}
             </a>
         </li>
