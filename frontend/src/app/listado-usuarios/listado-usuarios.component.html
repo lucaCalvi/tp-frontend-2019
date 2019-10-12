@@ -1,0 +1,30 @@
+<div>
+    <h3>Listado de usuarios</h3>
+</div>
+<div class="container">
+    <h5 *ngIf="usuarios == ''">No existen Usuarios registrados</h5>
+    <table class="hightlight" *ngIf="usuarios != ''">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Usuario</th>
+                <th>Tareas</th>
+                <th>Detalle</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let usuario of usuarios">
+                <td>{{usuario.nombre}}</td>
+                <td>{{usuario.apellido}}</td> 
+                <td>{{usuario.nombreUsuario}}</td>
+                <td>
+                    <a routerLink="/api/usuarios/{{usuario._id}}/tareas" class="btn-floating waves-effect waves-light red"><i class="material-icons">event_note</i></a>
+                </td>
+                <td>
+                    <a routerLink="/api/usuarios/{{usuario._id}}" class="btn-floating waves-effect waves-light red"><i class="material-icons">description</i></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
