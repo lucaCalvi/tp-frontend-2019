@@ -23,8 +23,8 @@ export class ListadoTareasAsignadasComponent implements OnInit {
   }
 
   getTareas() {
-    const id = this.route.snapshot.paramMap.get('id');
-    this.usuarioService.getTareas(id)
+    const nombreUsuario = this.route.snapshot.paramMap.get('nombreUsuario');
+    this.usuarioService.getTareas(nombreUsuario)
       .subscribe(res => {
         this.tareas = res;
         this.getUsuario();
@@ -35,8 +35,8 @@ export class ListadoTareasAsignadasComponent implements OnInit {
   }
 
   getUsuario() {
-    const id = this.route.snapshot.paramMap.get('id');
-    this.usuarioService.getUsuario(id)
+    const nombreUsuario = this.route.snapshot.paramMap.get('nombreUsuario');
+    this.usuarioService.getUsuario(nombreUsuario)
       .subscribe(res => {
         this.usuario = res;
       },

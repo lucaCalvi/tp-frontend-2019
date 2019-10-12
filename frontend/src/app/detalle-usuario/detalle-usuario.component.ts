@@ -23,8 +23,8 @@ export class DetalleUsuarioComponent implements OnInit {
   }
 
   getUsuario() {
-    const id = this.route.snapshot.paramMap.get('id');
-    this.usuarioService.getUsuario(id)
+    const nombreUsuario = this.route.snapshot.paramMap.get('nombreUsuario');
+    this.usuarioService.getUsuario(nombreUsuario)
       .subscribe(res => {
         this.usuario = res;
       },

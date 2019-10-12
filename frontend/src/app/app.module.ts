@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { MenuComponent } from './menu/menu.component';
 import { ListadoTareasAsignadasComponent } from './listado-tareas-asignadas/listado-tareas-asignadas.component';
 import { DetalleTareaComponent } from './detalle-tarea/detalle-tarea.component';
+import { SearchBoxComponent } from './search-box/search-box.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { DetalleTareaComponent } from './detalle-tarea/detalle-tarea.component';
     DetalleUsuarioComponent,
     MenuComponent,
     ListadoTareasAsignadasComponent,
-    DetalleTareaComponent
+    DetalleTareaComponent,
+    SearchBoxComponent
   ],
   imports: [
     BrowserModule,

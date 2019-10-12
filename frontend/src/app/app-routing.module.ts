@@ -9,9 +9,9 @@ import { DetalleTareaComponent } from './detalle-tarea/detalle-tarea.component';
 const routes: Routes = [
   { path: '', redirectTo: '/api/usuarios', pathMatch: 'full' },
   { path: 'api/usuarios', component: ListadoUsuariosComponent },
-  { path: 'api/usuarios/:id', component: DetalleUsuarioComponent },
-  { path: 'api/usuarios/:id/tareas', component: ListadoTareasAsignadasComponent },
-  { path: 'api/usuarios/:id/tareas/:idTarea', component: DetalleTareaComponent }
+  { path: 'api/usuarios/:nombreUsuario', component: DetalleUsuarioComponent },
+  { path: 'api/usuarios/:nombreUsuario/tareas', component: ListadoTareasAsignadasComponent },
+  { path: 'api/usuarios/:nombreUsuario/tareas/:idTarea', component: DetalleTareaComponent }
   //{ path: 'menu', component: MenuComponent }
 ];
 
