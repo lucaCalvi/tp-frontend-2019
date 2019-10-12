@@ -65,4 +65,10 @@ En el archivo readme.md deberá indicarse, el trabajo, año de cursado e integra
 
 Fecha de entrega final: TBD
 
+## 4 - Informacion TP
+Año cursado: 2019
+Integrantes: 42740 - Babaglio, Luciano 
+             42713 - Calvigioni, Luca
+Enunciado:
+
 
