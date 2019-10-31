@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 import { UsuarioService } from '../usuario.service';
@@ -9,6 +9,8 @@ import { UsuarioService } from '../usuario.service';
   styleUrls: ['./search-box.component.css']
 })
 export class SearchBoxComponent implements OnInit {
+
+  @Output() listUsuarios = new EventEmitter<Observable<Object>>();
 
   usuarios$: Observable<Object>;
   private searchTerms = new Subject<string>();
@@ -22,13 +24,18 @@ export class SearchBoxComponent implements OnInit {
       // ignore new term if same as previous term
       distinctUntilChanged(),
       // switch to new search observable each time the term changes
-      switchMap((term: string) => this.UsuarioService.searchUsuarios(term)),
+      switchMap((term: string) => this.UsuarioService.searchUsuarios(term))
     );
   }
 
   // Push a search term into the observable stream.
   search(term: string){
     this.searchTerms.next(term);
+    this.upUsuarios();
+  }
+
+  upUsuarios() {
+    this.listUsuarios.emit(this.usuarios$);
   }
 
 }

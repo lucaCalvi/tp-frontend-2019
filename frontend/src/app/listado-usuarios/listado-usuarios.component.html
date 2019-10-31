@@ -2,9 +2,9 @@
     <h3>Listado de usuarios</h3>
 </div>
 <div class="container">
-    <h5 *ngIf="usuarios == ''">No existen Usuarios registrados</h5>
-    <div *ngIf="usuarios != ''">
-        <app-search-box></app-search-box>
+    <h5 *ngIf="usuarios$ == ''">No existen Usuarios registrados</h5>
+    <div *ngIf="usuarios$ != null">
+        <app-search-box (listUsuarios)="updateList($event)"></app-search-box>
         <table class="hightlight">
             <thead>
                 <tr>
@@ -16,7 +16,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let usuario of usuarios">
+                <tr *ngFor="let usuario of usuarios$ | async">
                     <td>{{usuario.nombre}}</td>
                     <td>{{usuario.apellido}}</td> 
                     <td>{{usuario.nombreUsuario}}</td>
