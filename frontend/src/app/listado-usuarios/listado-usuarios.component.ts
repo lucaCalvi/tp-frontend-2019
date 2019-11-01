@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from '../usuario.service';
-import { Observable, of } from 'rxjs';
+import { Observable, of, empty, from } from 'rxjs';
 
 @Component({
   selector: 'app-listado-usuarios',
@@ -10,7 +10,6 @@ import { Observable, of } from 'rxjs';
 export class ListadoUsuariosComponent implements OnInit {
 
   usuarios$: any = null;
-  selectedUsuario = null;
 
   constructor(private usuarioService: UsuarioService) { }
 

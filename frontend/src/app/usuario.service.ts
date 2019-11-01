@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +12,7 @@ export class UsuarioService {
   constructor(private httpClient: HttpClient) { }
 
   getUsuarios(): Observable<Object> {
-    return of(this.httpClient.get<Observable<Object>>(this.URL_API));
+    return of(this.httpClient.get(this.URL_API));
   }
 
   getUsuario(nombreUsuario): Observable<Object> {
