@@ -36,4 +36,8 @@ export class UsuarioService {
     }
     return this.httpClient.get(this.URL_API + `/search/${term}`);
   }
+
+  insertUsuario(usuario): Observable<Object>{
+    return this.httpClient.post(this.URL_API, usuario);
+  }
 }

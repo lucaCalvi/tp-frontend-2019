@@ -14,3 +14,15 @@ td {
 table {
     margin: 20px;
 }
+
+table.striped>tbody>tr:hover {
+    background-color: #ef9a9a;
+}
+table.striped>tbody>tr {
+    background-color: #ef5350;
+    color: white;
+}
+table.striped>thead>tr {
+    background-color: #c62828;
+    color: white;
+}

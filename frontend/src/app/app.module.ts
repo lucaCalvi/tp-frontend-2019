@@ -12,6 +12,7 @@ import { MenuComponent } from './menu/menu.component';
 import { ListadoTareasAsignadasComponent } from './listado-tareas-asignadas/listado-tareas-asignadas.component';
 import { DetalleTareaComponent } from './detalle-tarea/detalle-tarea.component';
 import { SearchBoxComponent } from './search-box/search-box.component';
+import { FormularioComponent } from './formulario/formulario.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { SearchBoxComponent } from './search-box/search-box.component';
     MenuComponent,
     ListadoTareasAsignadasComponent,
     DetalleTareaComponent,
-    SearchBoxComponent
+    SearchBoxComponent,
+    FormularioComponent
   ],
   imports: [
     BrowserModule,
